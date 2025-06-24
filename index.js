@@ -1,4 +1,4 @@
-const express = require('express');
+Fconst express = require('express');
 const qiniu = require('qiniu');
 const path = require('path');
 const app = express();
@@ -80,7 +80,7 @@ app.get('/api/pages', async (req, res) => {
   if (!year || !issue) return res.status(400).json({ error: '缺少 year 或 issue 参数' });
   try {
     const pages = await listImages(`dazhongruanjian/${year}/${issue}/`);
-    const baseUrl = `https://www.chinesegamearchive.com/dazhongruanjian/${year}/${issue}/`;
+    const baseUrl = `https://www.cyber820.com/dazhongruanjian/${year}/${issue}/`;
     res.json(pages.map(name => baseUrl + name));
   } catch (err) {
     res.status(500).json({ error: err.message });
